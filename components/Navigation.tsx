@@ -4,6 +4,10 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import EmailIcon from '@mui/icons-material/Email';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EditIcon from '@mui/icons-material/Edit';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -18,10 +22,17 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'About', href: '#about', number: '01' },
-    { name: 'Experience', href: '#experience', number: '02' },
-    { name: 'Projects', href: '#projects', number: '03' },
-    { name: 'Contact', href: '#contact', number: '04' },
+    { name: 'Home', href: '#hero' },
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+  ];
+
+  const socialLinks = [
+    { icon: <EmailIcon fontSize="small" />, href: 'mailto:samira.sharmaaa@gmail.com', label: 'Email' },
+    { icon: <GitHubIcon fontSize="small" />, href: 'https://github.com/samirasharma', label: 'GitHub' },
+    { icon: <LinkedInIcon fontSize="small" />, href: 'https://linkedin.com/in/samira-sharma', label: 'LinkedIn' },
+    { icon: <EditIcon fontSize="small" />, href: '/resume.pdf', label: 'Resume' },
   ];
 
   return (
@@ -30,18 +41,18 @@ const Navigation = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? 'bg-navy-dark/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+          scrolled ? 'bg-navy-darkest/95 backdrop-blur-sm shadow-lg' : 'bg-navy-darkest'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex justify-between items-center">
           {/* Logo */}
           <motion.a
-            href="#"
-            className="text-accent-green text-2xl font-bold"
+            href="#hero"
+            className="text-navy-lightest text-xl font-semibold hover:text-accent-green transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            YN
+            Samira Sharma
           </motion.a>
 
           {/* Desktop Menu */}
@@ -50,24 +61,33 @@ const Navigation = () => {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-navy-lightest hover:text-accent-green transition-colors"
+                className="text-navy-lightest hover:text-accent-green transition-colors text-sm"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
               >
-                <span className="text-accent-green text-sm mr-1">{item.number}.</span>
                 {item.name}
               </motion.a>
             ))}
-            <motion.a
-              href="/resume.pdf"
-              className="border border-accent-green text-accent-green px-4 py-2 rounded hover:bg-accent-green/10 transition-all"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              Resume
-            </motion.a>
+          </div>
+
+          {/* Social Icons - Desktop */}
+          <div className="hidden md:flex items-center gap-4">
+            {socialLinks.map((link, i) => (
+              <motion.a
+                key={i}
+                href={link.href}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="text-navy-lightest hover:text-accent-green transition-colors"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + i * 0.1 }}
+                aria-label={link.label}
+              >
+                {link.icon}
+              </motion.a>
+            ))}
           </div>
 
           {/* Mobile Menu Button */}
@@ -88,7 +108,7 @@ const Navigation = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween' }}
-            className="fixed inset-0 bg-navy-dark z-40 md:hidden"
+            className="fixed inset-0 bg-navy-darkest z-40 md:hidden"
           >
             <div className="flex flex-col items-center justify-center h-full gap-8">
               {navItems.map((item, i) => (
@@ -101,20 +121,29 @@ const Navigation = () => {
                   transition={{ delay: i * 0.1 }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="text-accent-green text-lg mr-2">{item.number}.</span>
                   {item.name}
                 </motion.a>
               ))}
-              <motion.a
-                href="/resume.pdf"
-                className="border border-accent-green text-accent-green px-6 py-3 rounded text-xl hover:bg-accent-green/10 transition-all mt-4"
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 }}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Resume
-              </motion.a>
+              
+              {/* Social Icons - Mobile */}
+              <div className="flex gap-6 mt-8">
+                {socialLinks.map((link, i) => (
+                  <motion.a
+                    key={i}
+                    href={link.href}
+                    target={link.href.startsWith('http') ? '_blank' : undefined}
+                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="text-navy-lightest hover:text-accent-green transition-colors"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 + i * 0.1 }}
+                    onClick={() => setMobileMenuOpen(false)}
+                    aria-label={link.label}
+                  >
+                    {link.icon}
+                  </motion.a>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
