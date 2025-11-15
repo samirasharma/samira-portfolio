@@ -26,10 +26,10 @@ const Navigation = () => {
   ];
 
   const socialLinks = [
-    { icon: <EmailIcon fontSize="small" />, href: 'mailto:your.email@example.com', label: 'Email' },
-    { icon: <GitHubIcon fontSize="small" />, href: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: <LinkedInIcon fontSize="small" />, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: <DescriptionIcon fontSize="small" />, href: '/resume.pdf', label: 'Resume' },
+    { icon: <EmailIcon />, href: 'mailto:your.email@example.com', label: 'Email' },
+    { icon: <GitHubIcon />, href: 'https://github.com/yourusername', label: 'GitHub' },
+    { icon: <LinkedInIcon />, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
+    { icon: <DescriptionIcon />, href: '/resume.pdf', label: 'Resume' },
   ];
 
   return (
@@ -40,50 +40,52 @@ const Navigation = () => {
         scrolled ? 'bg-navy-darkest/95 backdrop-blur-sm shadow-lg' : 'bg-navy-darkest'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
-        {/* Logo */}
-        <motion.a
-          href="#hero"
-          className="text-navy-lightest text-xl font-semibold hover:text-accent-green transition-colors"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Your Name
-        </motion.a>
+      <div className="w-full px-8 md:px-16 py-4 md:py-5">
+        <div className="flex justify-between items-center">
+          {/* Logo - Left */}
+          <motion.a
+            href="#hero"
+            className="text-navy-lightest text-lg md:text-xl font-semibold hover:text-accent-green transition-colors flex-shrink-0"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Your Name
+          </motion.a>
 
-        {/* Center Menu */}
-        <div className="flex items-center gap-10">
-          {navItems.map((item, i) => (
-            <motion.a
-              key={item.name}
-              href={item.href}
-              className="text-navy-lightest hover:text-accent-green transition-colors text-base font-medium"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-            >
-              {item.name}
-            </motion.a>
-          ))}
-        </div>
+          {/* Center Menu */}
+          <div className="flex items-center gap-6 md:gap-12 mx-auto">
+            {navItems.map((item, i) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                className="text-navy-lightest hover:text-accent-green transition-colors text-sm md:text-base font-medium whitespace-nowrap"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+              >
+                {item.name}
+              </motion.a>
+            ))}
+          </div>
 
-        {/* Social Icons */}
-        <div className="flex items-center gap-5">
-          {socialLinks.map((link, i) => (
-            <motion.a
-              key={i}
-              href={link.href}
-              target={link.href.startsWith('http') ? '_blank' : undefined}
-              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className="text-navy-lightest hover:text-accent-green transition-colors"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 + i * 0.1 }}
-              aria-label={link.label}
-            >
-              {link.icon}
-            </motion.a>
-          ))}
+          {/* Social Icons - Right */}
+          <div className="flex items-center gap-4 md:gap-5 flex-shrink-0">
+            {socialLinks.map((link, i) => (
+              <motion.a
+                key={i}
+                href={link.href}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="text-navy-lightest hover:text-accent-green transition-colors"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + i * 0.1 }}
+                aria-label={link.label}
+              >
+                {link.icon}
+              </motion.a>
+            ))}
+          </div>
         </div>
       </div>
     </motion.nav>
