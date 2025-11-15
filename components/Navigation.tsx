@@ -40,12 +40,12 @@ const Navigation = () => {
         scrolled ? 'bg-navy-darkest/95 backdrop-blur-sm shadow-lg' : 'bg-navy-darkest'
       }`}
     >
-      <div className="w-full px-8 md:px-16 py-4 md:py-5">
-        <div className="flex justify-between items-center">
+      <div className="max-w-screen-2xl mx-auto px-8 py-5">
+        <div className="grid grid-cols-3 items-center">
           {/* Logo - Left */}
           <motion.a
             href="#hero"
-            className="text-navy-lightest text-lg md:text-xl font-semibold hover:text-accent-green transition-colors flex-shrink-0"
+            className="text-navy-lightest text-xl font-semibold hover:text-accent-green transition-colors justify-self-start"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -53,12 +53,12 @@ const Navigation = () => {
           </motion.a>
 
           {/* Center Menu */}
-          <div className="flex items-center gap-6 md:gap-12 mx-auto">
+          <div className="flex items-center justify-center gap-12">
             {navItems.map((item, i) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-navy-lightest hover:text-accent-green transition-colors text-sm md:text-base font-medium whitespace-nowrap"
+                className="text-navy-lightest hover:text-accent-green transition-colors text-base font-medium"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
@@ -69,7 +69,7 @@ const Navigation = () => {
           </div>
 
           {/* Social Icons - Right */}
-          <div className="flex items-center gap-4 md:gap-5 flex-shrink-0">
+          <div className="flex items-center justify-end gap-6">
             {socialLinks.map((link, i) => (
               <motion.a
                 key={i}
