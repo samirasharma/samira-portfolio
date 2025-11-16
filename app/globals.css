@@ -18,7 +18,7 @@ body {
   font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
-  padding-top: 70px;
+  padding-top: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
