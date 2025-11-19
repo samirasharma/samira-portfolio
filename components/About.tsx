@@ -10,14 +10,11 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const technologies = [
-    'JavaScript (ES6+)',
-    'TypeScript',
-    'React',
-    'Next.js',
-    'Node.js',
     'Python',
-    'PostgreSQL',
-    'MongoDB',
+    'Next.js',
+    'FileNet',
+    'AI',
+    'Machine Learning',
   ];
 
   return (
@@ -31,39 +28,18 @@ const About = () => {
           About Me
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-12 items-start">
-          <div className="md:col-span-2 space-y-4">
+        <div className="flex flex-row gap-12 items-start">
+          <div className="flex-[2] space-y-4">
             <p className="text-navy-light">
-              Hello! I'm Your Name, and I enjoy creating things that live on the internet.
-              My interest in web development started back in 2018 when I decided to try
-              editing custom themes — turns out hacking together a custom website taught me
-              a lot about HTML & CSS!
+              I'm Samira, a Technical Lead passionate about creating impactful systems. With experience across startups and large enterprises, I specialize in building scalable applications, automating workflows, and optimizing cloud infrastructure.
             </p>
 
             <p className="text-navy-light">
-              Fast-forward to today, and I've had the privilege of working at{' '}
-              <a href="#" className="text-accent-green hover:underline">
-                a startup
-              </a>
-              ,{' '}
-              <a href="#" className="text-accent-green hover:underline">
-                a large corporation
-              </a>
-              , and{' '}
-              <a href="#" className="text-accent-green hover:underline">
-                a digital agency
-              </a>
-              . My main focus these days is building accessible, inclusive products and
-              digital experiences for a variety of clients.
+              My work spans full-stack development, cloud architecture (AWS, Azure), and AI/ML integration. I've led teams to deliver high-impact projects that unlock large cost savings and also optimize workflows.
             </p>
 
             <p className="text-navy-light">
-              I also recently launched a course that covers everything you need to know to
-              build a web app with the latest technologies.
-            </p>
-
-            <p className="text-navy-light">
-              Here are a few technologies I've been working with recently:
+              Here are a few technologies I've been working with:
             </p>
 
             <ul className="grid grid-cols-2 gap-2 mt-4">
@@ -80,23 +56,31 @@ const About = () => {
                 </motion.li>
               ))}
             </ul>
+
+            <p className="text-navy-light">
+              Outside of tech, I am a children book author and a certified plant-based nutritionist. I genuinely believe in building systems that acutally make people's lives better.
+            </p>
           </div>
 
-          {/* Profile Image */}
+          {/* Profile Image - Right Side */}
           <motion.div
-            className="relative group"
+            className="flex-[1] relative group min-w-[250px]"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.2 }}
           >
-            <div className="relative z-10 rounded overflow-hidden">
-              <div className="aspect-square bg-navy-medium rounded flex items-center justify-center text-accent-green text-6xl border-2 border-accent-green group-hover:border-accent-green/50 transition-all">
-                <span className="font-bold">YN</span>
-              </div>
-              <div className="absolute inset-0 bg-accent-green/20 mix-blend-multiply group-hover:bg-transparent transition-all rounded"></div>
-            </div>
-            <div className="absolute inset-0 border-2 border-accent-green rounded translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-all"></div>
-          </motion.div>
+	<div className="relative z-10 rounded-lg overflow-hidden">
+  	<div className="aspect-square bg-navy-medium rounded-lg overflow-hidden border-2 border-accent-green group-hover:border-accent-green/50 transition-all relative">
+    	<img 
+      		src="/profile.jpg" 
+      		alt="Samira Sharma" 
+      		className="w-full h-full object-cover"
+    	/>
+    <div className="absolute inset-0 bg-accent-green/20 mix-blend-multiply group-hover:bg-transparent transition-all"></div>
+  </div>
+</div>
+<div className="absolute inset-0 border-2 border-accent-green rounded-lg translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-all"></div>
+</motion.div>
         </div>
       </motion.div>
     </section>
