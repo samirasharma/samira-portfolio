@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
@@ -39,15 +39,15 @@ const Hero = () => {
   ];
 
   return (
-    <section id="hero" className="min-h-screen flex flex-col items-center justify-center px-6">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-6 py-20">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-4xl flex flex-col items-center text-center"
+        className="max-w-4xl w-full flex flex-col items-center justify-center text-center"
       >
         {/* Animation above text */}
-        <motion.div variants={itemVariants} className="mb-4">
+        <motion.div variants={itemVariants} className="mb-2">
           <ButterflyAnimation />
         </motion.div>
         <motion.p variants={itemVariants} className="text-accent-green mb-5 text-lg text-center">
@@ -80,18 +80,18 @@ const Hero = () => {
 
         <motion.p
           variants={itemVariants}
-          className="text-navy-light text-lg md:text-xl max-w-2xl mb-20 leading-relaxed text-center"
+          className="text-navy-light text-lg md:text-xl max-w-md mb-0 leading-relaxed text-center"
         >
           I am technical lead in a US company. I have always been captivated by the idea of creating systems to make positive difference in people&apos;s live and  have diverse experience in building applications, automating large scale systems and in optimizing cost and workflows.
         </motion.p>
-<motion.div variants={itemVariants}>
+<motion.div variants={itemVariants} className="mt-16">
   <a
     href="mailto:samiraverse.ai@gmail.com"
     className="inline-flex items-center gap-5 border-2 border-accent-green text-accent-green px-12 py-6 rounded hover:bg-accent-green/10 transition-all text-lg font-medium"
-    style={{ padding: '1.5rem 3rem' }}
+    style={{ padding: '1.5rem 2rem', marginTop:'3rem' }}
   >
     <EmailIcon fontSize="medium" />
-    Let&apos;s connect!
+          Let&apos;s connect    !
   </a>
       </motion.div>
 </motion.div>
