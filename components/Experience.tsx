@@ -11,109 +11,119 @@ const Experience = () => {
 
   const experiences = [
     {
-      company: 'Company One',
-      position: 'Senior Software Engineer',
-      duration: 'Jan 2023 - Present',
-      url: 'https://company1.com',
+      company: 'Public Service Enterprise Group (PSEG)',
+      position: 'Senior Technical Lead',
+      duration: 'Sept 2019 - Present',
       responsibilities: [
-        'Write modern, performant, maintainable code for a diverse array of client and internal projects',
-        'Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, React, and WordPress',
-        'Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis',
+        'Automated the secure migration of 3M+ documents from legacy FileNet using Python scripting and SFTP — saving weeks of manual intervention and improving data integrity.',
+        'Saved $2M in platform upgrade costs by evaluating technical dependencies and recommending no-Upgrade alternative to leaderships',
+        'Exploring the use of ML to intelligently target automation pain points and reduce repetitive tasks.',
+        'Acted as a Subject Matter Expert (SME) for multiple projects replacing legacy applications, ensuring seamless transitions and minimizing disruptions.'
+
       ],
     },
     {
-      company: 'Company Two',
-      position: 'Software Engineer',
-      duration: 'Jun 2021 - Dec 2022',
-      url: 'https://company2.com',
+      company: 'Cloudchomp Inc',
+      position: 'DevOps Engineer',
+      duration: 'August 2018 - May 2019',
       responsibilities: [
-        'Developed and maintained code for in-house and client websites primarily using HTML, CSS, Sass, JavaScript, and React',
-        'Performed quality assurance tests on various sites to ensure cross-browser compatibility and mobile responsiveness',
-        'Clients included JetBlue, Lovesac, U.S. Cellular, and more',
+        'Automated CI/CD pipelines and cloud infrastructures in AWS',
+        'Managed 50+ servers across distributed systems',
+        'Maintained and optimized the product release pipeline phases',
       ],
     },
     {
-      company: 'Company Three',
-      position: 'Junior Developer',
+      company: 'Bajra Technologies',
+      position: 'Research Assistant',
       duration: 'Jan 2020 - May 2021',
-      url: 'https://company3.com',
       responsibilities: [
-        'Engineered and maintained major features of the platform using React, Redux, and Node.js',
-        'Interfaced with user experience designers and other developers to ensure thoughtful and coherent user experiences',
-        'Proposed and implemented scalable solutions to issues identified with cloud services and internal tools',
+        'Conducted research on machine learning algorithms for natural language processing',
+        'Developed Python-based tools for data analysis and visualization',
+        'Co-authored research paper on sentiment analysis published in academic journal',
       ],
     },
   ];
 
   return (
-    <section id="experience" ref={ref} className="px-6">
+    
+    <section id="experience" ref={ref} className="px-6 py-8">
+      <h2 className="section-heading" data-number="02.">
+          Experience
+        </h2>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
+        className="max-w-4xl mx-auto"
       >
-        <h2 className="section-heading" data-number="02.">
-          Where I've Worked
-        </h2>
 
-        <div className="flex flex-col md:flex-row gap-4 mt-12">
-          {/* Tab List */}
-          <div className="flex md:flex-col overflow-x-auto md:overflow-visible">
-            {experiences.map((exp, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveTab(i)}
-                className={`px-5 py-3 text-left whitespace-nowrap border-l-2 md:border-l-2 md:border-b-0 border-b-2 transition-all ${
+        {/* Horizontal Tabs */}
+        <div className="flex" style={{ marginBottom: '3rem' }}>
+          {experiences.map((exp, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveTab(i)}
+              className="relative transition-colors"
+              style={{ marginRight: '4rem', background: 'transparent', border: 'none', paddingBottom: '1rem' }}
+            >
+              <span
+                className={`text-sm uppercase tracking-wider ${
                   activeTab === i
-                    ? 'border-accent-green text-accent-green bg-navy-medium/30'
-                    : 'border-navy-medium text-navy-light hover:bg-navy-medium/20 hover:text-accent-green'
+                    ? 'font-medium underline'
+                    : 'hover:text-navy-lightest'
                 }`}
+                style={{ color: activeTab === i ? '#64ffda' : '#8892b0' }}
               >
                 {exp.company}
-              </button>
-            ))}
-          </div>
+              </span>
+              <div
+                className={`absolute bottom-0 left-0 right-0 h-0.5 transition-colors ${
+                  activeTab === i ? 'bg-accent-green' : 'bg-navy-medium'
+                }`}
+              />
+            </button>
+          ))}
+        </div>
 
-          {/* Tab Content */}
-          <div className="flex-1 min-h-[400px]">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3 }}
-              className="space-y-6"
-            >
-              <div>
-                <h3 className="text-2xl font-semibold text-navy-lightest">
-                  {experiences[activeTab].position}{' '}
-                  <a
-                    href={experiences[activeTab].url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent-green hover:underline"
-                  >
-                    @ {experiences[activeTab].company}
-                  </a>
-                </h3>
-                <p className="text-navy-light mt-1">{experiences[activeTab].duration}</p>
-              </div>
+        {/* Tab Content */}
+        <div style={{ marginTop: '3rem' }}>
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <div style={{ marginBottom: '2rem' }}>
+              <h3 className="text-2xl font-semibold text-navy-lightest" style={{ marginBottom: '1rem' }}>
+                {experiences[activeTab].position}{' '}
+                <span className="text-accent-green">
+                  @ {experiences[activeTab].company}
+                </span>
+              </h3>
+              <p className="text-navy-light text-sm uppercase tracking-widest">
+                {experiences[activeTab].duration}
+              </p>
+            </div>
 
-              <ul className="space-y-4">
-                {experiences[activeTab].responsibilities.map((item, i) => (
-                  <motion.li
-                    key={i}
-                    className="flex items-start text-navy-light"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                  >
-                    <ArrowRightIcon className="text-accent-green mr-3 mt-1 flex-shrink-0" />
-                    <span>{item}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
+            <ul style={{ marginTop: '2.5rem' }}>
+              {experiences[activeTab].responsibilities.map((item, i) => (
+                <motion.li
+                  key={i}
+                  className="flex items-start text-navy-light leading-relaxed"
+                  style={{ marginBottom: '1.5rem' }}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <ArrowRightIcon 
+                    className="text-accent-green mr-4 mt-0.5 flex-shrink-0" 
+                    sx={{ fontSize: 20 }} 
+                  />
+                  <span className="text-base">{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </motion.div>
     </section>
