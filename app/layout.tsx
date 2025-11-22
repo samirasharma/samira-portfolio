@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navigation from "@/components/Navigation"; // Adjust path to your Navigation component
 
 export const metadata: Metadata = {
-  title: "Your Name | Portfolio",
+  title: "Samira Sharma | Portfolio",
   description: "Portfolio website showcasing my work and experience",
 };
 
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }

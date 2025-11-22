@@ -82,24 +82,18 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" ref={ref} className="px-6 py-20" style={{ backgroundColor: '#0a192f' }}>
-    {/* <section id="projects" ref={ref} className="px-6" style={{ backgroundColor: '#0a192f' }}> */}
+   
+    <section id="projects" ref={ref} className="px-6">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
         className="max-w-6xl mx-auto"
       >
         {/* Section Title */}
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '60px', gap: '20px' }}>
-          <h2 className="text-3xl font-bold" style={{ color: '#ccd6f6', whiteSpace: 'nowrap' }}>
-            <span style={{ color: '#64ffda', fontFamily: 'monospace', fontSize: '20px', marginRight: '10px' }}>
-              03.
-            </span>
-            Passion Projects
-          </h2>
-          <div style={{ flex: 1, height: '1px', backgroundColor: '#233554' }}></div>
-        </div>
+      <h2 className="section-heading" data-number="03.">
+          Passion Projects
+        </h2>
 
         {/* Featured Projects Carousel */}
         <div className="mb-20" style={{ position: 'relative' }}>

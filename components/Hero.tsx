@@ -39,7 +39,8 @@ const Hero = () => {
   ];
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-6 py-20">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-6" >
+       {/* <section id="hero" className="min-h-screen flex items-center justify-center px-6 py-20"> */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -56,14 +57,14 @@ const Hero = () => {
 
         <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-7xl font-bold text-navy-lightest mb-3 text-center"
+          className="text-4xl md:text-4xl font-bold text-navy-lightest mb-3 text-center"
         >
           Samira Sharma
         </motion.h1>
 
         <motion.h2
           variants={itemVariants}
-          className="text-4xl md:text-6xl font-bold text-navy-light mb-5 text-center"
+          className="text-l md:text-l font-bold text-navy-light mb-5 text-center"
         >
           <TypeAnimation
             sequence={[

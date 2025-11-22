@@ -46,8 +46,8 @@ const Experience = () => {
 
   return (
     
-    // <section id="experience" ref={ref} className="px-6">
-    <section id="experience" ref={ref} className="px-6 py-20" style={{ backgroundColor: '#0a192f' }}>
+   
+    <section id="experience" ref={ref} className="px-6">
       <h2 className="section-heading" data-number="02.">
           Experience
         </h2>

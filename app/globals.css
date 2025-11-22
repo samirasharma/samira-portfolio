@@ -1,6 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Custom colors matching your design */
+  --color-navy-darkest: #0a192f;
+  --color-navy-dark: #112240;
+  --color-navy-light: #233554;
+  --color-navy-lightest: #ccd6f6;
+  --color-slate: #8892b0;
+  --color-accent-green: #64ffda;
+}
 
 * {
   margin: 0;
@@ -10,17 +18,8 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 100px; /* Increased for navigation height */
 }
-
-/* body {
-  background-color: #0a192f;
-  color: #8892b0;
-  font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
-  line-height: 1.6;
-  overflow-x: hidden;
-  padding-top: 0;
-} */
 
 body {
   background-color: #0a192f;
@@ -28,9 +27,14 @@ body {
   font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
-  padding-top: 0;  
+  padding-top: 140px; 
 }
 
+@media (max-width: 768px) {
+  body {
+    padding-top: 100px;
+  }
+}
 
 h1, h2, h3, h4, h5, h6 {
   color: #ccd6f6;
@@ -38,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #64ffda;
+  color: #fff;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -48,27 +52,18 @@ a:hover {
   filter: brightness(1.2);
 }
 
-/* section {
-  min-height: 100vh;
-  padding-top: 80px;
-  padding-bottom:40px;
-  max-width: 1000px;
-  margin: 0 auto;
-} */
 section {
   min-height: 100vh;
-  padding-top: 150px;
-  padding-bottom: 40px;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 100px 40px; 
 }
 
-
-/* section[id] {
-  scroll-margin-top: 120px;
-} */
-
 @media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+  
   section {
     padding: 80px 20px;
   }
@@ -80,7 +75,7 @@ section {
   align-items: center;
   margin: 10px 0 40px;
   width: 100%;
-  font-size: clamp(26px, 5vw, 32px);
+  font-size: clamp(16px, 3vw, 16px);
   white-space: nowrap;
   color: #ccd6f6;
   font-weight: 600;
@@ -128,7 +123,6 @@ section {
   background: #64ffda;
 }
 
-/* Button resets for clean styling */
 button {
   background: none;
   border: none;
@@ -139,7 +133,6 @@ button {
   color: inherit;
 }
 
-/* Experience section specific styles */
 #experience button {
   background: transparent !important;
 }
