@@ -40,7 +40,6 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center px-6" >
-       {/* <section id="hero" className="min-h-screen flex items-center justify-center px-6 py-20"> */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -51,20 +50,20 @@ const Hero = () => {
         <motion.div variants={itemVariants} className="mb-2">
           <ButterflyAnimation />
         </motion.div>
-        <motion.p variants={itemVariants} className="text-accent-green mb-5 text-lg text-center">
+        <motion.p variants={itemVariants} className="text-slate mb-5 text-lg text-center">
           Hi, my name is
         </motion.p>
 
         <motion.h1
           variants={itemVariants}
-          className="text-4xl md:text-4xl font-bold text-navy-lightest mb-3 text-center"
+          className="text-4xl md:text-4xl font-bold text-orange mb-3 text-center"
         >
           Samira Sharma
         </motion.h1>
 
         <motion.h2
           variants={itemVariants}
-          className="text-l md:text-l font-bold text-navy-light mb-5 text-center"
+          className="text-l md:text-l font-bold text-light-blue mb-5 text-center"
         >
           <TypeAnimation
             sequence={[
@@ -81,14 +80,14 @@ const Hero = () => {
 
         <motion.p
           variants={itemVariants}
-          className="text-navy-light text-lg md:text-xl max-w-md mb-0 leading-relaxed text-center"
+          className="text-slate text-md md:text-md max-w-md mb-0 leading-relaxed text-center"
         >
           I am technical lead in a US company. I have always been captivated by the idea of creating systems to make positive difference in people&apos;s live and  have diverse experience in building applications, automating large scale systems and in optimizing cost and workflows.
         </motion.p>
 <motion.div variants={itemVariants} className="mt-16">
   <a
     href="mailto:samiraverse.ai@gmail.com"
-    className="inline-flex items-center gap-5 border-2 border-accent-green text-accent-green px-12 py-6 rounded hover:bg-accent-green/10 transition-all text-lg font-medium"
+    className="inline-flex items-center gap-5 border-2 border-orange text-orange px-12 py-6 rounded hover:bg-orange/10 transition-all text-lg font-medium"
     style={{ padding: '1.5rem 2rem', marginTop:'3rem' }}
   >
     <EmailIcon fontSize="medium" />

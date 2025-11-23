@@ -110,7 +110,7 @@ const Projects = () => {
                   {/* Card Background */}
                   <div
                     style={{
-                      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                      background: 'linear-gradient(135deg, #667eea 0%, #0a192f 100%)',
                       borderRadius: '12px',
                       padding: '80px 60px',
                       minHeight: '500px',
@@ -169,7 +169,7 @@ const Projects = () => {
                         <span
                           key={i}
                           style={{
-                            color: '#64ffda',
+                            color: '#ca7558',
                             fontSize: '12px',
                             fontWeight: '600',
                             letterSpacing: '1px',
@@ -271,7 +271,7 @@ const Projects = () => {
                   height: '8px',
                   borderRadius: '4px',
                   border: 'none',
-                  background: index === currentSlide ? '#64ffda' : '#495670',
+                  background: index === currentSlide ? '#ca7558' : '#495670',
                   cursor: 'pointer',
                   transition: 'all 0.3s',
                 }}
@@ -289,7 +289,7 @@ const Projects = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.1 }}
               style={{
-                background: '#112240',
+                background: '#0a192f',
                 borderRadius: '12px',
                 padding: '35px 30px',
                 transition: 'transform 0.3s, box-shadow 0.3s',
@@ -309,7 +309,7 @@ const Projects = () => {
             >
               {/* Header with Folder and Links */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
-                <AssignmentIcon sx={{ fontSize: 44, color: '#64ffda' }} />
+                <AssignmentIcon sx={{ fontSize: 44, color: '#ca7558' }} />
                 <div style={{ display: 'flex', gap: '14px' }}>
                   {project.live && (
                     <a
@@ -317,7 +317,7 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{ color: '#a8b2d1', transition: 'color 0.3s' }}
-                      onMouseOver={(e) => (e.currentTarget.style.color = '#64ffda')}
+                      onMouseOver={(e) => (e.currentTarget.style.color = '#ca7558')}
                       onMouseOut={(e) => (e.currentTarget.style.color = '#a8b2d1')}
                     >
                       <OpenInNewIcon sx={{ fontSize: 22 }} />
@@ -328,7 +328,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: '#a8b2d1', transition: 'color 0.3s' }}
-                    onMouseOver={(e) => (e.currentTarget.style.color = '#64ffda')}
+                    onMouseOver={(e) => (e.currentTarget.style.color = '#ca7558')}
                     onMouseOut={(e) => (e.currentTarget.style.color = '#a8b2d1')}
                   >
                     <GitHubIcon sx={{ fontSize: 22 }} />

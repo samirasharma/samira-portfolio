@@ -71,15 +71,15 @@ const Experience = () => {
                 className={`text-sm uppercase tracking-wider ${
                   activeTab === i
                     ? 'font-medium underline'
-                    : 'hover:text-navy-lightest'
+                    : 'hover:text-slate'
                 }`}
-                style={{ color: activeTab === i ? '#64ffda' : '#8892b0' }}
+                style={{ color: activeTab === i ? '#ca7558' : '#8892b0' }}
               >
                 {exp.company}
               </span>
               <div
                 className={`absolute bottom-0 left-0 right-0 h-0.5 transition-colors ${
-                  activeTab === i ? 'bg-accent-green' : 'bg-navy-medium'
+                  activeTab === i ? 'bg-orange' : 'bg-navy-medium'
                 }`}
               />
             </button>
@@ -95,13 +95,13 @@ const Experience = () => {
             transition={{ duration: 0.4 }}
           >
             <div style={{ marginBottom: '2rem' }}>
-              <h3 className="text-2xl font-semibold text-navy-lightest" style={{ marginBottom: '1rem' }}>
+              <h3 className="text-2xl font-semibold text-slate" style={{ marginBottom: '1rem' }}>
                 {experiences[activeTab].position}{' '}
-                <span className="text-accent-green">
+                <span className="text-orange">
                   @ {experiences[activeTab].company}
                 </span>
               </h3>
-              <p className="text-navy-light text-sm uppercase tracking-widest">
+              <p className="text-slate text-sm uppercase tracking-widest">
                 {experiences[activeTab].duration}
               </p>
             </div>
@@ -110,14 +110,14 @@ const Experience = () => {
               {experiences[activeTab].responsibilities.map((item, i) => (
                 <motion.li
                   key={i}
-                  className="flex items-start text-navy-light leading-relaxed"
+                  className="flex items-start text-slate leading-relaxed"
                   style={{ marginBottom: '1.5rem' }}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
                 >
                   <ArrowRightIcon 
-                    className="text-accent-green mr-4 mt-0.5 flex-shrink-0" 
+                    className="text-orange mr-4 mt-0.5 flex-shrink-0" 
                     sx={{ fontSize: 20 }} 
                   />
                   <span className="text-base">{item}</span>

@@ -44,14 +44,14 @@ const Navigation = () => {
 
     >
       <div className="flex justify-center items-center px-16 max-w-screen-2xl mx-auto relative"
-      style={{ padding: '2rem 4rem' }} >
+      style={{ padding: '2rem 4rem' }}>
         {/* Center: Nav links */}
         <div className="flex items-center gap-12">
           {navItems.map((item, i) => (
             <motion.a
               key={item.name}
               href={item.href}
-              className={`text-[#ccd6f6] hover:text-[#64ffda] transition-colors ${
+              className={`text-[#f5f5dc] hover:text-[#305955] transition-colors ${
                 i === 0 ? 'text-base font-medium' : 'text-base font-normal'
               }`}
               initial={{ opacity: 0, y: -20 }}
@@ -73,7 +73,7 @@ const Navigation = () => {
               href={link.href}
               target={link.href.startsWith('http') ? '_blank' : undefined}
               rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors"
+              className="text-[#f5f5dc] hover:text-[#ca7558] transition-colors"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 + i * 0.1 }}
